@@ -1,5 +1,6 @@
 package com.github.souzafcharles.portfolio.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public class Portfolio {
     private String title;
 
     @OneToMany(mappedBy = "portfolio", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Asset> assets;
 
     public Portfolio() {
