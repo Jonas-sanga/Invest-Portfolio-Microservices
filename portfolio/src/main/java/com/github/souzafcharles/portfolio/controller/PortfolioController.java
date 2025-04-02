@@ -18,7 +18,7 @@ public class PortfolioController {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    
+
     @Value("${broker.queue.process.name}")
     private String routerKey;
 
