@@ -14,16 +14,16 @@ public class PortfolioService {
     @Autowired
     private PortfolioRepository repository;
 
-    public Portfolio create (Portfolio entity) {
-        if(entity.getAssets() != null){
-            for(Asset asset : entity.getAssets()){
+    public Portfolio create(Portfolio entity) {
+        if (entity.getAssets() != null) {
+            for (Asset asset : entity.getAssets()) {
                 asset.setPortfolio(entity);
             }
         }
         return repository.save(entity);
     }
 
-    public List<Portfolio> readAll(){
+    public List<Portfolio> readAll() {
         return repository.findAll();
     }
 }
