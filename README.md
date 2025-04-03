@@ -79,10 +79,10 @@ The architecture comprises the following key components:
 ## Dependencies:
 
 | Dependency                           | Category         | Description                                                                                 |
-|--------------------------------------|------------------|------------------------------------------------------------------------------------------ --|
+|--------------------------------------|------------------|---------------------------------------------------------------------------------------------|
 | 🌐 Spring Web                        | Web              | Builds web applications, including RESTful APIs using Spring MVC                            |
 | 💾 Spring Data JPA                   | SQL              | Simplifies database interactions using JPA with Spring Data and Hibernate                   |
 | 🐘 PostgreSQL Driver                 | SQL              | Provides connectivity between Java applications and PostgreSQL databases                    |
 | 🍃 Spring Data MongoDB               | NoSQL            | Integrates with MongoDB, enabling reactive as well as blocking data access                  |
 | 🐇 Spring AMQP                       | Messaging        | Provides integration with RabbitMQ for message-driven architecture; utilised with CloudAMQP |
-| 🌱 Spring Boot Devtools              | Developer Tools  | Offers development-time tools for application restart and debugging                         |
+| 🛠️ Spring Boot Devtools              | Developer Tools  | Offers development-time tools for application restart and debugging                         |
