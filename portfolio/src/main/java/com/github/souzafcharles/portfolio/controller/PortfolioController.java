@@ -1,5 +1,6 @@
 package com.github.souzafcharles.portfolio.controller;
 
+import com.github.souzafcharles.portfolio.dto.PortfolioRequestDTO;
 import com.github.souzafcharles.portfolio.model.Portfolio;
 import com.github.souzafcharles.portfolio.service.PortfolioService;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -25,7 +26,8 @@ public class PortfolioController {
     @PostMapping
     public String create(@RequestBody Portfolio portfolio) {
         Portfolio created = service.create(portfolio);
-        rabbitTemplate.convertAndSend("", routerKey, created.getTitle());
+        PortfolioRequestDTO dto = new PortfolioRequestDTO(created.getId(), created.getTitle());
+        rabbitTemplate.convertAndSend("", routerKey, dto);
         return "Portfolio saved and sent for processing: " + portfolio.getTitle();
     }
 
